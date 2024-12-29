@@ -32,50 +32,23 @@
     <!-- Sidebar Navigation end-->
     <div class="page-content  justify-items-center">
       <div class="page-header px-[450px]">
+      <h1 class="p-3">Edit Category</h2>
         <div class="container-fluid">
-          <form action="{{url('add_category')}}" method="POST">
+          <form action="{{ url('update_category', $data->id) }}" method="POST">
+            
             @csrf
             <div class="flex gap-x-4">
               <div class="">
-                <input class="rounded px-[12px] py-[7.2px]" type="text" name="category">
+                <input class="rounded px-[12px] py-[7.2px]" type="text" name="category" value="{{ $data->category_name }}">
               </div>
               <div>
-                <input class="btn btn-primary" type="submit" value="Add Category">
+                <input class="btn btn-primary" type="submit" value="Update Category">
               </div>
             </div>
           </form>
         </div>
         <div class="justify-items-center ">
-          <table>
-            <thead>
-              <tr>
-                <th>Category</th>
-                <th>Edit</th>
-                <th>Delete</th>
-
-              </tr>
-            </thead>
-            <tbody>
-              @foreach($data as $item)
-              <tr>
-                <td>{{ $item->category_name }}</td>
-              
-                <td>
-                  <a href="{{ url('edit_category', $item->id) }}" class="btn btn-primary" name="category">Edit</a>
-                </td>
-
-                
-                <td>
-                  <form action="{{ url('delete_category', $item->id) }}" method="POST" class="delete-form">
-                    @csrf
-                    <button type="button" class="btn btn-danger delete-btn">Delete</button>
-                  </form>
-                </td>
-
-              </tr>
-              @endforeach
-            </tbody>
-          </table>
+          
         </div>
       </div>
 
