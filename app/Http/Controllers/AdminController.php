@@ -79,7 +79,26 @@ class AdminController extends Controller
     }
 
     public function view_product(){
-        $products = Product::all();
+        $products = Product::Paginate(3);
         return view("admin.view_product",compact('products'));
+    }
+
+    public function delete_product($id) {
+        $data = Product::find($id);
+    
+        if ($data) {
+            $data->delete();
+            return redirect()->back()->with('success', 'Product deleted successfully.');
+        }
+    
+        return redirect()->back()->with('error', 'Product not found.');
+    }
+
+    public function search_p(Request $request){
+        $search = $request->search;
+        $products = Product::where('title', 'LIKE', '%'.$search.'%')->paginate(3);
+
+        return view("admin.view_product",compact('products'));
+
     }
 }

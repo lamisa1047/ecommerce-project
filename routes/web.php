@@ -43,3 +43,9 @@ middleware(['auth', 'admin']);
 
 Route::get('view_product',[AdminController::class, 'view_product'])->
 middleware(['auth', 'admin']);
+
+Route::post('delete_product/{id}', [AdminController::class, 'delete_product'])
+    ->middleware(['auth', 'admin']);
+
+Route::post('search_p',[AdminController::class, 'search_p'])->
+    middleware(['auth', 'admin']);    
