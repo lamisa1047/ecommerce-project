@@ -7,25 +7,28 @@
       </div>
       <div class="row">
 
-      @foreach($product as $products)
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box bg-white shadow">
-            <a href="">
-              <div class="img-box">
-                <img src="products/{{$products->image}}" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>{{$products->title}}</h6>
-                <h6><span>
-                   {{$products->price}}
-                  </span>
-                </h6>
-              </div>
-            </a>
-          </div>
+      @foreach($data as $item)
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="box bg-white shadow">
+            
+                <div class="img-box">
+                    <img src="products/{{$item->image}}" alt="">
+                </div>
+                <div class="detail-box p-3">
+                    <h6>{{ $item->title }}</h6>
+                    <h6>
+                        <span>
+                            {{ $item->price }}
+                        </span>
+                    </h6>
+                    <a href="{{ url('add_cart', $item->id) }}">
+                        <i class="fa fa-shopping-bag" aria-hidden="true"> + </i>
+                    </a>
+                </div>
+            
         </div>
-
-        @endforeach
+    </div>
+@endforeach
 
       </div>
       <div class="btn-box">

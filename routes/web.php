@@ -49,3 +49,6 @@ Route::post('delete_product/{id}', [AdminController::class, 'delete_product'])
 
 Route::post('search_p',[AdminController::class, 'search_p'])->
     middleware(['auth', 'admin']);    
+
+Route::get('add_cart/{id}', [HomeController::class, 'add_cart'])->middleware(['auth', 'verified']) ; 
+ 

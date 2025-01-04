@@ -21,7 +21,7 @@
                   </div>
                   <div class="col-md-5 ">
                     <div class="img-box">
-                      <img style="width:600px" src="images/image3.jpeg" alt="" />
+                      <img style="width:400px" src="bag.png" alt="" />
                     </div>
                   </div>
                 </div>
