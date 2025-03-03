@@ -49,4 +49,8 @@ Route::post('search_p',[AdminController::class, 'search_p'])->
     middleware(['auth', 'admin']);    
 
 Route::get('add_cart/{id}', [HomeController::class, 'add_cart'])->middleware(['auth', 'verified']) ; 
- 
+
+Route::get("health", fn()=> [
+    "name"=> "Lamisha",
+    "age"=> 23
+]);

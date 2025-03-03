@@ -18,13 +18,13 @@
         <div class="col-md-6 col-lg-5 px-0">
           <form action="#">
             <div>
-              <input type="text" placeholder="Name" />
+              <input type="text" class="rounded-lg" placeholder="Name" />
             </div>
             <div>
-              <input type="email" placeholder="Email" />
+              <input type="email" class="rounded-xl"placeholder="Email" />
             </div>
             <div>
-              <input type="text" placeholder="Phone" />
+              <input type="text" class="rounded-xl"placeholder="Phone" />
             </div>
             <div>
               <input type="text" class="message-box" placeholder="Message" />
